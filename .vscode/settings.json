@@ -1,0 +1,28 @@
+{
+  "actionButtons": {
+    "defaultColor": "#ff0034", // Can also use string color names.
+    "loadNpmCommands": false, // Disables automatic generation of actions for npm commands.
+    "reloadButton": "♻️", // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
+    "homepage": "https://holykiller.github.io/AngularBasics/",
+    "commands": [
+      {
+        "name": "Start Server",
+        "singleInstance": true,
+        "color": "#fff",
+        "command": "ng serve -o"
+      },
+      {
+        "name": "Start Testing",
+        "singleInstance": true,
+        "color": "#fff",
+        "command": "ng test"
+      },
+      {
+        "name": "Deploy To Main Resume",
+        "singleInstance": true,
+        "color": "#fff",
+        "command": "ng deploy --repo https://github.com/holykiller/HenngeChallenge.git --base-href https://holykiller.github.io/HenngeChallenge/"
+      }
+    ]
+  }
+}
