@@ -1,0 +1,59 @@
+.meta-parent {
+  height: 100%;
+  width: 100%;
+  margin-top: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+.file {
+  padding-left: 0;
+  width: 30px;
+  height: 21px;
+  padding-right: 10px;
+}
+.file img {
+  width: 100%;
+  height: 100%;
+}
+.meta-date {
+  width: 70%;
+  text-align: left;
+  font-weight: bold;
+}
+.enter {
+  display: none;
+  top: 23%;
+  right: 4%;
+  width: 10px;
+  height: 10px;
+}
+.enter img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.mail-icon {
+  display: none;
+}
+.mail-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .enter {
+    display: block;
+  }
+  .meta-date {
+    font-size: 0.9em;
+    font-weight: 100;
+    text-align: right;
+  }
+}
+@media screen and (max-width: 360px) {
+  .meta-parent {
+    font-size: 0.85em;
+  }
+}

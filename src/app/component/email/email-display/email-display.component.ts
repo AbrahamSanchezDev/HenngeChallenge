@@ -31,29 +31,12 @@ export class EmailDisplayComponent implements OnInit {
     this.date = new Date(this.email.date);
     this.today = new Date();
   }
-
+  //Returns the  email's sender
   getSender(): string {
     return this.email.senderEmail;
   }
-  getDestination(): string {
-    if (this.email.destination.length == 1) {
-      return this.email.destination[0];
-    }
-    return `${this.email.destination[0]}...`;
-  }
-  hasMoreThanOneDestination(): boolean {
-    return this.email.destination.length > 1;
-  }
-  getTotalDestionations(): string {
-    return `+${this.email.destination.length - 1}`;
-  }
+  //Gets the email's subject
   getSubject(): string {
     return this.email.subject;
-  }
-  getEmailDate(): string {
-    return this.email.date;
-  }
-  hasFiles(): boolean {
-    return this.email.files != null && this.email.files.length > 0;
   }
 }

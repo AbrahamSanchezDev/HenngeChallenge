@@ -1,15 +1,19 @@
 <div class="main-display">
-  <p class="sender text-display">{{ getSender() }}</p>
-  <p class="destination text-display">{{ getDestination() }}</p>
-  <div class="extra-destination">
-    <p *ngIf="hasMoreThanOneDestination()" class="extra">
-      {{ getTotalDestionations() }}
-    </p>
+  <p class="sender text-display conteind-text">{{ getSender() }}</p>
+
+  <!-- Sender -->
+  <app-destination-display
+    [email]="email"
+    class="destination-obj text-display"
+  ></app-destination-display>
+  <!-- Subject -->
+  <p class="subject text-display conteind-text">{{ getSubject() }}</p>
+  <app-email-meta-data-display
+    [email]="email"
+    class="date"
+  ></app-email-meta-data-display>
+
+  <div class="mail-icon">
+    <img src="assets/sgv/icon_mail_sp.svg" alt="mail" />
   </div>
-  <p class="subject text-display">{{ getSubject() }}</p>
-  <div class="file">
-    <img src="assets/sgv/icon_clip.svg" alt="file" *ngIf="hasFiles()" />
-  </div>
-  <app-date-display class="date" [dateText]="getEmailDate()">
-  </app-date-display>
 </div>

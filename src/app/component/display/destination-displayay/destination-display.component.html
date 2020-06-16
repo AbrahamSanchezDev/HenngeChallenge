@@ -1,0 +1,8 @@
+<div class="destination-parent">
+  <p class="destinations conteind-text">{{ getDestination() }}</p>
+  <div class="extra-destination">
+    <p *ngIf="hasMoreThanOneDestination()" class="extra">
+      {{ getTotalDestionations() }}
+    </p>
+  </div>
+</div>
