@@ -1,8 +1,7 @@
-import { NgModule, Inject } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FileObjectModule } from '../file-object/file-object.module';
 import { DateModule } from '../date/date.module';
-import { InjectionToken } from '@angular/core';
 
 @NgModule({
   declarations: [],

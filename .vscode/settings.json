@@ -18,7 +18,7 @@
         "command": "ng test"
       },
       {
-        "name": "Deploy To Main Resume",
+        "name": "Deploy To Git Pages",
         "singleInstance": true,
         "color": "#fff",
         "command": "ng deploy --repo https://github.com/holykiller/HenngeChallenge.git --base-href https://holykiller.github.io/HenngeChallenge/"
