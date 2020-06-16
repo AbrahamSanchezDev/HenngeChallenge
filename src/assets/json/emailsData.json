@@ -5,7 +5,7 @@
       "zzz.zzz@example.com"
     ],
     "subject": "[HR-888] Notice of official announcement",
-    "date": "2020-06-15T05:20:18.038Z"
+    "date": "2020-06-16T05:20:18.038Z"
   },
   {
     "senderEmail": "bbb.bbb@example.com",
@@ -13,7 +13,7 @@
       "yyy@example.com"
     ],
     "subject": "[web:333]\"Web Contact\"",
-    "date": "2020-06-15T05:10:18.038Z"
+    "date": "2020-06-16T05:10:18.038Z"
   },
   {
     "senderEmail": "ccc@example.com",
@@ -22,7 +22,7 @@
       "someOther@example.com"
     ],
     "subject": "Happy New Year! Greetings for the New Yeear.",
-    "date": "2020-06-15T05:00:18.038Z",
+    "date": "2020-06-16T05:00:18.038Z",
     "files": [
       {
         "fileName": "FileName",

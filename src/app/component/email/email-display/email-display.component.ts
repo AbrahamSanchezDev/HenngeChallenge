@@ -51,8 +51,13 @@ export class EmailDisplayComponent implements OnInit {
     return this.email.subject;
   }
   getDate(): string {
+    console.log(this.date);
+
     // console.log(this.today);
-    if (this.date.getDay() == this.today.getDay()) {
+    if (
+      this.date.getDay() == this.today.getDay() &&
+      this.date.getMonth() == this.today.getMonth()
+    ) {
       return `${this.date.getHours()}:${this.date.getMinutes()}`;
     }
     if (this.date.getFullYear() == this.today.getFullYear()) {
