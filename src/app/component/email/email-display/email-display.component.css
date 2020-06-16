@@ -6,17 +6,17 @@
   display: flex;
   flex-direction: row;
   background-color: #faebd7;
-  border-bottom: 1px solid;
-  height: 100%;
+
+  border-bottom: 1px #cccccc solid;
   justify-items: start;
   justify-content: space-evenly;
 }
 
 .sender {
-  width: 20%;
+  flex-basis: 20%;
 }
 .destination {
-  width: 20%;
+  flex-basis: 20%;
 }
 .extra {
   background-color: rgb(134, 151, 155);
@@ -28,10 +28,10 @@
   margin-top: 10%;
 }
 .extra-destination {
-  width: 5%;
+  flex-basis: 5%;
 }
 .subject {
-  width: 45%;
+  flex-basis: 45%;
 }
 .file {
   width: 2.5%;
@@ -44,7 +44,7 @@
   padding-top: 50%;
 }
 .date {
-  width: 10%;
+  flex-basis: 10%;
   padding-left: 10px;
 }
 .main-display:hover .text-display {

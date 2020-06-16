@@ -10,7 +10,6 @@
   <div class="file">
     <img src="assets/sgv/icon_clip.svg" alt="file" *ngIf="hasFiles()" />
   </div>
-  <p class="date">
-    {{ getDate() }}
-  </p>
+  <app-date-display class="date" [dateText]="getEmailDate()">
+  </app-date-display>
 </div>

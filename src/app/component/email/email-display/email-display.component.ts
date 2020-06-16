@@ -50,23 +50,8 @@ export class EmailDisplayComponent implements OnInit {
   getSubject(): string {
     return this.email.subject;
   }
-  getDate(): string {
-    if (
-      this.date.getDay() == this.today.getDay() &&
-      this.date.getMonth() == this.today.getMonth()
-    ) {
-      let curMin = this.date.getMinutes().toString();
-      if (curMin.length == 1) {
-        curMin = `0${curMin}`;
-      }
-      return `${this.date.getHours()}:${curMin}`;
-    }
-    if (this.date.getFullYear() == this.today.getFullYear()) {
-      return `${this.months[this.date.getMonth()]} ${this.date.getDay()}`;
-    }
-    return `${this.date.getFullYear()}/${
-      this.date.getMonth() + 1
-    }/${this.date.getDate()}`;
+  getEmailDate(): string {
+    return this.email.date;
   }
   hasFiles(): boolean {
     return this.email.files != null && this.email.files.length > 0;
