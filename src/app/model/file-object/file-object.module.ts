@@ -6,5 +6,6 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class FileObjectModule {
-  constructor(public name: string, public link: string) {}
+  public fileName: string;
+  public link: string;
 }

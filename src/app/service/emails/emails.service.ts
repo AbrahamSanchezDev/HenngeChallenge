@@ -2,16 +2,28 @@ import { Injectable } from '@angular/core';
 import { EmailModule } from 'src/app/model/email/email.module';
 import { FileObjectModule } from 'src/app/model/file-object/file-object.module';
 import { DownloadToolService } from '../download-tool/download-tool.service';
+import { DateModule } from 'src/app/model/date/date.module';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EmailsService {
   emails: EmailModule[] = [];
-  constructor(private downloadTool: DownloadToolService) {
-    this.createTestingEmails();
+  emailsPath: string = 'assets/json/emailsData.json';
+  constructor(
+    private downloadTool: DownloadToolService,
+    private http: HttpClient
+  ) {
+    this.loadFromJson();
   }
-
+  //Load emails from the json file
+  loadFromJson(): void {
+    this.http.get<EmailModule[]>(this.emailsPath).subscribe((data) => {
+      this.emails = data;
+    });
+  }
+  //Create data for testing
   createTestingEmails(): void {
     let todayData = new Date();
     let mail0 = todayData;
@@ -26,6 +38,7 @@ export class EmailsService {
     let lastYear = todayData;
     lastYear.setFullYear(2019, 11, 31);
 
+    let files = [{ fileName: 'FileName', link: 'TheLink.com' }];
     this.addEmail(
       'aaa',
       ['zzz.zzz'],
@@ -38,7 +51,7 @@ export class EmailsService {
       ['xxx', 'someOther'],
       'Happy New Year! Greetings for the New Yeear.',
       mail2,
-      [new FileObjectModule('FileName', 'TheLink.com')]
+      files
     );
     this.addEmail(
       'ddd.dddd',
@@ -69,11 +82,9 @@ export class EmailsService {
       ['ooo.ooo'],
       'Workplace Summery for for sample, Inc.: Jan2-Jan 9:',
       jan01,
-      [new FileObjectModule('FileName', 'TheLink.com')]
+      files
     );
-    this.addEmail('iii', ['nnn'], 'I love you', lastYear, [
-      new FileObjectModule('FileName', 'TheLink.com'),
-    ]);
+    this.addEmail('iii', ['nnn'], 'I love you', lastYear, files);
     this.addEmail(
       'Pablo-Diego-José-Francisco',
       ['Pablo-Diego-José-Francisco'],
@@ -81,6 +92,7 @@ export class EmailsService {
       lastYear
     );
   }
+  //Creates the emailmodule and sets the variables
   addEmail(
     from: string,
     to: string[],
@@ -88,16 +100,13 @@ export class EmailsService {
     date: Date,
     files?: FileObjectModule[]
   ): void {
-    this.emails.push(
-      new EmailModule(
-        from,
-        to,
-        subject,
-        date,
-        `This is the content text for the mail with the subject of : ${subject}`,
-        files
-      )
-    );
+    let email = new EmailModule();
+    email.senderEmail = from;
+    email.destination = to;
+    email.subject = subject;
+    email.date = new DateModule(date);
+    email.files = files;
+    this.emails.push(email);
   }
   //Returns the current emails
   getAllEmails(): EmailModule[] {
@@ -111,7 +120,7 @@ export class EmailsService {
       if (i == currentMails.length - 2) {
         break;
       }
-      currentMails[i].origen += ending;
+      currentMails[i].senderEmail += ending;
       for (let y = 0; y < currentMails[i].destination.length; y++) {
         currentMails[i].destination[y] += ending;
       }
