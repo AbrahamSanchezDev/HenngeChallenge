@@ -1,4 +1,5 @@
 <div>
+  <button (click)="load()">Downlad</button>
   <div>
     <img src="assets/img/logo.png" alt="logp" />
     <img src="assets/sgv/icon_arrow01.svg" alt="img" class="img" />
@@ -8,10 +9,8 @@
     <img src="assets/sgv/icon_mail_sp.svg" alt="img" class="img" />
     <img src="assets/sgv/icon_search.svg" alt="img" class="img" />
   </div>
-  <button (click)="loadAllEmails()">Get</button>
-  <br />
-  Load = {{ emails.length }}
-  <div *ngFor="let obj of emails">
-    {{ obj.senderEmail }}
+
+  <div *ngFor="let email of emails">
+    <app-email-display [email]="email"></app-email-display>
   </div>
 </div>

@@ -11,7 +11,7 @@ export class EmailModule {
   senderEmail: string;
   destination: string[];
   subject: string;
-  date: DateModule;
+  date: string;
   content: string;
   files?: FileObjectModule[];
 }

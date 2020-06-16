@@ -1,0 +1,16 @@
+<div class="main-display">
+  <p class="sender text-display">{{ getSender() }}</p>
+  <p class="destination text-display">{{ getDestination() }}</p>
+  <div class="extra-destination">
+    <p *ngIf="hasMoreThanOneDestination()" class="extra">
+      {{ getTotalDestionations() }}
+    </p>
+  </div>
+  <p class="subject text-display">{{ getSubject() }}</p>
+  <div class="file">
+    <img src="assets/sgv/icon_clip.svg" alt="file" *ngIf="hasFiles()" />
+  </div>
+  <p class="date">
+    {{ getDate() }}
+  </p>
+</div>

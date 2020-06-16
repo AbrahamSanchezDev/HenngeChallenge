@@ -1,34 +1,28 @@
 [
   {
-    "senderEmail": "aaa@example.com@example.com",
+    "senderEmail": "aaa@example.com",
     "destination": [
-      "zzz.zzz@example.com@example.com"
+      "zzz.zzz@example.com"
     ],
     "subject": "[HR-888] Notice of official announcement",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    }
+    "date": "2020-06-15T05:20:18.038Z"
   },
   {
-    "senderEmail": "bbb.bbb@example.com@example.com",
+    "senderEmail": "bbb.bbb@example.com",
     "destination": [
-      "yyy@example.com@example.com"
+      "yyy@example.com"
     ],
     "subject": "[web:333]\"Web Contact\"",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    }
+    "date": "2020-06-15T05:10:18.038Z"
   },
   {
-    "senderEmail": "ccc@example.com@example.com",
+    "senderEmail": "ccc@example.com",
     "destination": [
-      "xxx@example.com@example.com",
-      "someOther@example.com@example.com"
+      "xxx@example.com",
+      "someOther@example.com"
     ],
     "subject": "Happy New Year! Greetings for the New Yeear.",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    },
+    "date": "2020-06-15T05:00:18.038Z",
     "files": [
       {
         "fileName": "FileName",
@@ -37,57 +31,47 @@
     ]
   },
   {
-    "senderEmail": "ddd.dddd@example.com@example.com",
+    "senderEmail": "ddd.dddd@example.com",
     "destination": [
-      "vvv.vvv@example.com@example.com",
-      "someOther@example.com@example.com"
+      "vvv.vvv@example.com",
+      "someOther@example.com"
     ],
     "subject": "[HR-887(Reviced: Office Expansion Project Team)] Notice of officers",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    }
+    "date": "2020-01-02T04:38:18.038Z"
   },
   {
-    "senderEmail": "eee@example.com@example.com",
+    "senderEmail": "eee@example.com",
     "destination": [
-      "sss@example.com@example.com",
-      "someOther@example.com@example.com",
-      "oneMore@example.com@example.com"
+      "sss@example.com",
+      "someOther@example.com",
+      "oneMore@example.com"
     ],
     "subject": "[Github] Logout Page",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    }
+    "date": "2020-01-02T04:38:18.038Z"
   },
   {
-    "senderEmail": "fff.fff@example.com@example.com",
+    "senderEmail": "fff.fff@example.com",
     "destination": [
-      "qqq.qqq@example.com@example.com"
+      "qqq.qqq@example.com"
     ],
     "subject": "[dev] Postfix 3.1.12 / 3.2.9 / 3.3.4 / 3.4.5",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    }
+    "date": "2020-01-02T04:38:18.038Z"
   },
   {
-    "senderEmail": "ggg@example.com@example.com",
+    "senderEmail": "ggg@example.com",
     "destination": [
-      "ppp@example.com@example.com"
+      "ppp@example.com"
     ],
     "subject": "Re:[Github] Brush-up on loading animation",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    }
+    "date": "2020-01-02T04:38:18.038Z"
   },
   {
-    "senderEmail": "hhh.hhh@example.com@example.com",
+    "senderEmail": "hhh.hhh@example.com",
     "destination": [
-      "ooo.ooo@example.com@example.com"
+      "ooo.ooo@example.com"
     ],
     "subject": "Workplace Summery for for sample, Inc.: Jan2-Jan 9:",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    },
+    "date": "2020-01-02T04:38:18.038Z",
     "files": [
       {
         "fileName": "FileName",
@@ -101,9 +85,7 @@
       "nnn@example.com"
     ],
     "subject": "I love you",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    },
+    "date": "2020-01-01T04:38:18.038Z",
     "files": [
       {
         "fileName": "FileName",
@@ -117,8 +99,6 @@
       "Pablo-Diego-José-Francisco"
     ],
     "subject": "[info:888] ABC EQUIPMENT COMPANY",
-    "date": {
-      "date": "2019-12-31T06:00:08.165Z"
-    }
+    "date": "2020-01-01T04:38:18.038Z"
   }
 ]

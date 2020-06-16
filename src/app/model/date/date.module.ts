@@ -6,9 +6,5 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class DateModule {
-  //Returns the date based on what
-  getTheDate(): string {
-    return this.date.getDay().toFixed();
-  }
   constructor(public date: Date) {}
 }

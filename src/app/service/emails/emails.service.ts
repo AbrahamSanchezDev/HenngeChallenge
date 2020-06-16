@@ -11,7 +11,10 @@ import { HttpClient } from '@angular/common/http';
 export class EmailsService {
   emails: EmailModule[] = [];
   emailsPath: string = 'assets/json/emailsData.json';
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private downloadTool: DownloadToolService
+  ) {}
   //Load emails from the json file
   loadFromJson(): EmailModule[] {
     if (this.emails.length > 0) {
@@ -40,17 +43,18 @@ export class EmailsService {
   //#region fixed data
   //Create data for testing
   createTestingEmails(): void {
-    let todayData = new Date();
-    let mail0 = todayData;
+    this.emails.length = 0;
+    let mail0 = new Date();
     mail0.setHours(0, 20);
-    let mail1 = todayData;
+    let mail1 = new Date();
     mail1.setHours(0, 10);
-    let mail2 = todayData;
+    let mail2 = new Date();
     mail2.setHours(0, 0);
-    let jan01 = todayData;
+    let jan01 = new Date();
     jan01.setMonth(0, 1);
     jan01.setDate(1);
-    let lastYear = todayData;
+    let lastYear = new Date();
+
     lastYear.setFullYear(2019, 11, 31);
 
     let files = [{ fileName: 'FileName', link: 'TheLink.com' }];
@@ -119,24 +123,24 @@ export class EmailsService {
     email.senderEmail = from;
     email.destination = to;
     email.subject = subject;
-    email.date = new DateModule(date);
+    email.date = date.toJSON();
     email.files = files;
     this.emails.push(email);
   }
   //#endregion
-  // //Download current mails as json
-  // downloadAsJson(): void {
-  //   let currentMails = this.emails;
-  //   let ending = '@example.com';
-  //   for (let i = 0; i < currentMails.length; i++) {
-  //     if (i == currentMails.length - 1) {
-  //       break;
-  //     }
-  //     currentMails[i].senderEmail += ending;
-  //     for (let y = 0; y < currentMails[i].destination.length; y++) {
-  //       currentMails[i].destination[y] += ending;
-  //     }
-  //   }
-  //   this.downloadTool.DownloadTextToFileAsJson(currentMails, 'emailsData');
-  // }
+  //Download current mails as json
+  downloadAsJson(): void {
+    let currentMails = this.emails;
+    let ending = '@example.com';
+    for (let i = 0; i < currentMails.length; i++) {
+      if (i == currentMails.length - 1) {
+        break;
+      }
+      currentMails[i].senderEmail += ending;
+      for (let y = 0; y < currentMails[i].destination.length; y++) {
+        currentMails[i].destination[y] += ending;
+      }
+    }
+    this.downloadTool.DownloadTextToFileAsJson(currentMails, 'emailsData');
+  }
 }

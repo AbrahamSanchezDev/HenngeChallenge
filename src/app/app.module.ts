@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './component/pages/main/main.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EmailDisplayComponent } from './component/email/email-display/email-display.component';
 @NgModule({
-  declarations: [AppComponent, MainComponent],
+  declarations: [AppComponent, MainComponent, EmailDisplayComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -20,4 +20,8 @@ export class MainComponent implements OnInit {
   loadAllEmails(): void {
     this.emails = this.emailsService.getJsonData();
   }
+  load() {
+    this.emailsService.createTestingEmails();
+    this.emailsService.downloadAsJson();
+  }
 }
