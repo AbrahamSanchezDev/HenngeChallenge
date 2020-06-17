@@ -3,13 +3,15 @@
   height: 100%;
   display: flex;
   padding-left: 10px;
+  cursor: pointer;
+  user-select: none;
 }
 .sort-text {
+  font-weight: 500;
 }
 .sort-img {
   margin-left: 5px;
   width: 10px;
-  /* background-color: aqua; */
   align-items: center;
   display: flex;
 }
@@ -19,4 +21,7 @@
 }
 .inverse {
   transform: rotate(180deg);
+}
+.hiden {
+  display: none;
 }

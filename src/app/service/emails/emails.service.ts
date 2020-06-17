@@ -3,6 +3,7 @@ import { EmailModule } from 'src/app/model/email/email.module';
 import { FileObjectModule } from 'src/app/model/file-object/file-object.module';
 import { DownloadToolService } from '../download-tool/download-tool.service';
 import { HttpClient } from '@angular/common/http';
+import { SortingOption } from 'src/app/model/sorting/sorting-option';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +11,71 @@ import { HttpClient } from '@angular/common/http';
 export class EmailsService {
   emails: EmailModule[] = [];
   emailsPath: string = 'assets/json/emailsData.json';
+  options: SortingOption;
+  increment: boolean;
+  optionIndex: number;
   constructor(
     private http: HttpClient,
     private downloadTool: DownloadToolService
-  ) {}
+  ) {
+    this.options = new SortingOption();
+    this.options.data.push({
+      text: 'From',
+      callback: () => this.sortByFrom(),
+      active: false,
+      increment: false,
+    });
+    this.options.data.push({
+      text: 'To',
+      callback: () => this.sortByTo(),
+      active: false,
+      increment: false,
+    });
+    this.options.data.push({
+      text: 'Subject',
+      callback: () => this.sortBySubject(),
+      active: false,
+      increment: false,
+    });
+    this.options.data.push({
+      text: 'Date',
+      callback: () => this.sortByDate(),
+      active: true,
+      increment: true,
+    });
+  }
+  sortByFrom(): void {
+    this.deactivateOtherOptions(0);
+  }
+  sortByTo(): void {
+    this.deactivateOtherOptions(1);
+  }
+  sortBySubject(): void {
+    this.deactivateOtherOptions(2);
+  }
+  sortByDate(): void {
+    this.deactivateOtherOptions(3);
+  }
+  //Deactivates the options
+  deactivateOtherOptions(index: number) {
+    //If it gets the same index as before then just toggle the increment
+    if (this.optionIndex == index) {
+      this.toggleIncrement();
+      return;
+    }
+    //Deactivates all others options
+    this.optionIndex = index;
+    for (let i = 0; i < this.options.data.length; i++) {
+      this.options.data[i].active = i == index;
+    }
+  }
+  //Toggle the increment
+  toggleIncrement() {
+    this.increment = !this.increment;
+    for (let i = 0; i < this.options.data.length; i++) {
+      this.options.data[i].increment = this.increment;
+    }
+  }
   //Load emails from the json file
   loadFromJson(): EmailModule[] {
     if (this.emails.length > 0) {
@@ -39,6 +101,7 @@ export class EmailsService {
     });
     return this.emails;
   }
+
   //#region fixed data
   //Create data for testing
   createTestingEmails(): void {

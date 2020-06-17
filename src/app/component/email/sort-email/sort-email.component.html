@@ -2,19 +2,22 @@
   <div class="sort-options">
     <app-sort-email-option
       class="sort-from"
-      text="From"
+      [option]="getOption(0)"
     ></app-sort-email-option>
     <div class="space"></div>
-    <app-sort-email-option class="sort-to" text="To"></app-sort-email-option>
+    <app-sort-email-option
+      class="sort-to"
+      [option]="getOption(1)"
+    ></app-sort-email-option>
     <div class="space"></div>
     <app-sort-email-option
       class="sort-subject"
-      text="Subject"
+      [option]="getOption(2)"
     ></app-sort-email-option>
     <div class="space"></div>
     <app-sort-email-option
       class="sort-date"
-      text="Date"
+      [option]="getOption(3)"
     ></app-sort-email-option>
   </div>
 </div>

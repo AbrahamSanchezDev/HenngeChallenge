@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuData } from 'src/app/model/menu/MenuData';
+import { SortingOption } from 'src/app/model/sorting/sorting-option';
+import { EmailsService } from 'src/app/service/emails/emails.service';
 
 @Component({
   selector: 'app-sort-email',
   templateUrl: './sort-email.component.html',
-  styleUrls: ['./sort-email.component.css']
+  styleUrls: ['./sort-email.component.css'],
 })
 export class SortEmailComponent implements OnInit {
+  constructor(private emailService: EmailsService) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  getOption(index: number): MenuData {
+    return this.emailService.options.data[index];
   }
-
 }

@@ -1,10 +1,10 @@
-<div class="sort-option">
+<div class="sort-option" (click)="onClick()">
   <div class="sort-text">
     <p>
-      {{ text }}
+      {{ getText() }}
     </p>
   </div>
   <div class="sort-img">
-    <img src="assets/sgv/icon_arrow01.svg" alt="img" class="inverse" />
+    <img src="{{ arrow }}" alt="img" class="{{ getSortDirection() }}" />
   </div>
 </div>
