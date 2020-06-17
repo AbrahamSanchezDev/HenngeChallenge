@@ -10,7 +10,13 @@ export class DestinationDisplayayComponent implements OnInit {
   @Input() email: EmailModule;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.email == null) {
+      console.error(
+        "Please pass 'email' to the component  DestinationDisplayayComponent"
+      );
+    }
+  }
   //retuns the destinations of the email
   getDestination(): string {
     if (this.email.destination.length == 1) {

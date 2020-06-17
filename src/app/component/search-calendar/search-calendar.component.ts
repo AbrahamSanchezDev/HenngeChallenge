@@ -10,6 +10,10 @@ import { DateObj } from './date-obj';
 export class SearchCalendarComponent implements OnInit {
   searchRange: DateObj[] = [];
 
+  startRange: string = 'start-range';
+  endRange: string = 'end-range';
+  selectionRange: string = 'selected-range';
+
   constructor() {
     let today = new Date();
     this.addDate(today);
@@ -27,18 +31,17 @@ export class SearchCalendarComponent implements OnInit {
     console.log('Search ranges');
   }
   //Check if the date is currently selected
-  isSelected = (event: any) => {
+  isSelected = (event: Date): string => {
     if (this.checkIfSelected(event)) {
+      //The first position was in the same as the event
       if (this.selectedDate(event) == 0) {
-        return 'start-range';
+        return this.startRange;
       }
-      return 'end-range';
+      //The Second position was in the same as the event
+      return this.endRange;
     }
-
-    if (this.checkIfInRange(event)) {
-      return 'selected-range';
-    }
-    return '';
+    //Check if the given date is in range
+    return this.checkIfInRange(event) ? this.selectionRange : '';
   };
   //Called by the calendar when selected a date
   selectDate(event: Date, calendar: MatCalendar<Date>) {
@@ -93,7 +96,7 @@ export class SearchCalendarComponent implements OnInit {
   }
   //Returns true if its between the starting date and the end date
   checkIfInRange(event: Date): boolean {
-    return this.searchRange[0].date < event && this.searchRange[1].date > event;
+    return event > this.searchRange[0].date && event < this.searchRange[1].date;
   }
   //Check if the given date is currently selected as start or end range
   checkIfSelected(event: Date): boolean {

@@ -10,7 +10,13 @@ export class EmailMetaDataDisplayComponent implements OnInit {
   @Input() email: EmailModule;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.email == null) {
+      console.error(
+        "Please pass 'email' to the component  EmailMetaDataDisplayComponent"
+      );
+    }
+  }
   //returns the date of the file
   getEmailDate(): string {
     return this.email.date;

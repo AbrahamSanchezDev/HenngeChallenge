@@ -9,29 +9,44 @@ import { SortingData } from 'src/app/model/sorting/sorting-data';
 export class SortEmailOptionComponent implements OnInit {
   @Input() option: SortingData;
   arrow: string = 'assets/sgv/icon_arrow01.svg';
+  hiden: string = 'hiden';
+  inverse: string = 'inverse';
 
   constructor() {}
-
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    if (this.option == null) {
+      console.log("Please pass the 'option' variable to the component");
+    }
+  }
   //Retuns the sorting direction
-  getSortDirection() {
+  getSortDirection(): string {
+    if (this.option == null) {
+      return '';
+    }
     if (!this.option.active) {
-      return 'hiden';
+      return this.hiden;
     }
     //Check if its
     if (!this.option.increment) {
-      return 'inverse';
+      return this.inverse;
     }
     return '';
   }
   //Retuns the option text
   getText(): string {
+    if (this.option == null) {
+      return '';
+    }
     return this.option.text;
   }
   //Calls the option callback
   onClick(): void {
-    this.option.callback();
     event.stopPropagation();
+    if (this.option == null) {
+      return;
+    }
+    if (this.option.callback != null) {
+      this.option.callback();
+    }
   }
 }

@@ -26,6 +26,13 @@ export class DateDisplayComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    if (this.dateText == null) {
+      console.error("Please pass variable 'dateText' in DateDisplayComponent");
+    }
+    this.createDate();
+  }
+  //Create the date based in the given text
+  createDate(): void {
     this.date = new Date(this.dateText);
     this.today = new Date();
   }

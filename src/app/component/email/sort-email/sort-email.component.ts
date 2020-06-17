@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuData } from 'src/app/model/menu/MenuData';
-import { SortingOption } from 'src/app/model/sorting/sorting-option';
 import { EmailsService } from 'src/app/service/emails/emails.service';
 
 @Component({
@@ -12,7 +11,7 @@ export class SortEmailComponent implements OnInit {
   constructor(private emailService: EmailsService) {}
 
   ngOnInit(): void {}
-
+  //Retuns the option at the given index
   getOption(index: number): MenuData {
     return this.emailService.options.data[index];
   }

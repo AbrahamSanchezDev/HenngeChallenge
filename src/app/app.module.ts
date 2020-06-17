@@ -12,19 +12,14 @@ import { EmailMetaDataDisplayComponent } from './component/display/email-meta-da
 import { DestinationDisplayayComponent } from './component/display/destination-displayay/destination-display.component';
 import { SearchEmailComponent } from './component/email/search-email/search-email.component';
 import { SearchCalendarComponent } from './component/search-calendar/search-calendar.component';
-import {
-  MatDatepickerModule,
-  MatDatepickerToggle,
-} from '@angular/material/datepicker';
-import {
-  MatFormFieldModule,
-  MatFormFieldControl,
-} from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { SortEmailComponent } from './component/email/sort-email/sort-email.component';
 import { SortEmailOptionComponent } from './component/email/sort-email-option/sort-email-option.component';
+
 @NgModule({
   declarations: [
     AppComponent,
