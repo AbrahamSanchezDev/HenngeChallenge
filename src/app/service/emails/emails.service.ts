@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { EmailModule } from 'src/app/model/email/email.module';
 import { FileObjectModule } from 'src/app/model/file-object/file-object.module';
 import { DownloadToolService } from '../download-tool/download-tool.service';
-import { DateModule } from 'src/app/model/date/date.module';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

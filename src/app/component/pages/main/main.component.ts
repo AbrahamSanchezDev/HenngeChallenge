@@ -20,8 +20,9 @@ export class MainComponent implements OnInit {
   loadAllEmails(): void {
     this.emails = this.emailsService.getJsonData();
   }
-  load() {
-    this.emailsService.createTestingEmails();
-    this.emailsService.downloadAsJson();
+
+  hasMails(): boolean {
+    // return this.emails.length > 0;
+    return false;
   }
 }

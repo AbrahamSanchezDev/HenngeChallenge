@@ -1,18 +1,19 @@
 <div class="main-display">
-  <p class="sender text-display conteind-text">{{ getSender() }}</p>
-
   <!-- Sender -->
+  <p class="sender text-display conteind-text">{{ getSender() }}</p>
+  <!-- Destinations -->
   <app-destination-display
     [email]="email"
     class="destination-obj text-display"
   ></app-destination-display>
   <!-- Subject -->
   <p class="subject text-display conteind-text">{{ getSubject() }}</p>
+  <!-- Date and files -->
   <app-email-meta-data-display
     [email]="email"
     class="date"
   ></app-email-meta-data-display>
-
+  <!-- Mail to icon -->
   <div class="mail-icon">
     <img src="assets/sgv/icon_mail_sp.svg" alt="mail" />
   </div>

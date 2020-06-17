@@ -1,0 +1,34 @@
+<div class="search-parent">
+  <div class="search-container">
+    <!-- Calender -->
+    <div class="calender">
+      <img
+        src="assets/sgv/icon_calender.svg"
+        alt="calender"
+        [matMenuTriggerFor]="appMenu"
+      />
+    </div>
+    <!-- Range Text -->
+    <div class="range">
+      <p>{{ getSearchRange() }}</p>
+    </div>
+    <!-- Search Button -->
+    <div class="search-button">
+      <img
+        src="assets/sgv/icon_search.svg"
+        alt="search"
+        (click)="startSearch()"
+      />
+    </div>
+  </div>
+  <!-- Calendar -->
+  <mat-menu #appMenu="matMenu" class="drop-calendar">
+    <div (click)="$event.stopPropagation()">
+      <mat-calendar
+        #calendar
+        (selectedChange)="selectDate($event, calendar)"
+        [dateClass]="isSelected"
+      ></mat-calendar>
+    </div>
+  </mat-menu>
+</div>
