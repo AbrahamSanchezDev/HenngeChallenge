@@ -1,0 +1,12 @@
+.email-options-parent {
+  display: flex;
+  margin-bottom: 20px;
+}
+.email-options-parent button {
+  height: 50px;
+  min-width: 200px;
+  background-color: rgb(255, 244, 231);
+  border: 1px solid var(--edges);
+  margin-right: 10px;
+  border-radius: 10px;
+}

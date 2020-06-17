@@ -1,11 +1,12 @@
 <div class="main-parent">
+  <app-email-options></app-email-options>
   <div class="search-email">
     <app-search-email></app-search-email>
   </div>
   <div class="results">
     <div *ngIf="hasMails()">
       <app-sort-email></app-sort-email>
-      <div *ngFor="let email of emails">
+      <div *ngFor="let email of getEmails()">
         <app-email-display [email]="email"></app-email-display>
       </div>
     </div>

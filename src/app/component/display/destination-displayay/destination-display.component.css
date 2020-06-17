@@ -1,6 +1,7 @@
 .destination-parent {
   display: flex;
   position: relative;
+  justify-content: center;
 }
 .destinations {
   padding-top: 0px;
@@ -13,6 +14,7 @@
   padding-top: 16px;
 }
 .extra {
+  margin-top: 0;
   background-color: rgb(134, 151, 155);
   border-radius: 5px;
   color: rgb(255, 255, 255);

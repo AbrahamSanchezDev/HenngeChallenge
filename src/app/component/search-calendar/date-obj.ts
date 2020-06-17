@@ -26,15 +26,15 @@ export class DateObj {
   }
   //Returns my date as text
   getMyDateAsText(): string {
-    return this.year + '-' + +(this.month + 1) + '-' + this.date;
+    return this.year + '/' + +(this.month + 1) + '/' + this.date;
   }
   //Retuns the given date as text
   getDateAsText(date: Date): string {
     return (
       date.getFullYear() +
-      '-' +
+      '/' +
       +(date.getMonth() + 1).toString().slice(-2) +
-      '-' +
+      '/' +
       date.getDate().toString().slice(-2)
     );
   }

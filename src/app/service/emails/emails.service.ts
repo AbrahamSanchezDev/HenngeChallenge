@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { EmailModule } from 'src/app/model/email/email.module';
-import { FileObjectModule } from 'src/app/model/file-object/file-object.module';
-import { DownloadToolService } from '../download-tool/download-tool.service';
 import { HttpClient } from '@angular/common/http';
 import { SortingOption } from 'src/app/model/sorting/sorting-option';
 
@@ -10,14 +8,13 @@ import { SortingOption } from 'src/app/model/sorting/sorting-option';
 })
 export class EmailsService {
   emails: EmailModule[] = [];
+  allEmails: EmailModule[] = [];
   emailsPath: string = 'assets/json/emailsData.json';
   options: SortingOption;
   increment: boolean;
   optionIndex: number;
-  constructor(
-    private http: HttpClient,
-    private downloadTool: DownloadToolService
-  ) {
+
+  constructor(private http: HttpClient) {
     this.options = new SortingOption();
     this.options.data.push({
       text: 'From',
@@ -43,18 +40,49 @@ export class EmailsService {
       active: true,
       increment: true,
     });
+
+    this.getAllDataFromJson();
   }
+  //#region Sorting
+  //Set the current emails by senderEmail
   sortByFrom(): void {
     this.deactivateOtherOptions(0);
+    if (this.increment) {
+      this.emails.sort((a, b) => a.senderEmail.localeCompare(b.senderEmail));
+    } else {
+      this.emails.sort((a, b) => b.senderEmail.localeCompare(a.senderEmail));
+    }
   }
+  //Set the current emails by destination
   sortByTo(): void {
     this.deactivateOtherOptions(1);
+    if (this.increment) {
+      this.emails.sort((a, b) =>
+        a.destination[0].localeCompare(b.destination[0])
+      );
+    } else {
+      this.emails.sort((a, b) =>
+        b.destination[0].localeCompare(a.destination[0])
+      );
+    }
   }
+  //Set the current emails by subject
   sortBySubject(): void {
     this.deactivateOtherOptions(2);
+    if (this.increment) {
+      this.emails.sort((a, b) => a.subject.localeCompare(b.subject));
+    } else {
+      this.emails.sort((a, b) => b.subject.localeCompare(a.subject));
+    }
   }
+  //Set the current emails by date
   sortByDate(): void {
     this.deactivateOtherOptions(3);
+    if (this.increment) {
+      this.emails.sort((a, b) => a.date.localeCompare(b.date));
+    } else {
+      this.emails.sort((a, b) => b.date.localeCompare(a.date));
+    }
   }
   //Deactivates the options
   deactivateOtherOptions(index: number) {
@@ -76,133 +104,38 @@ export class EmailsService {
       this.options.data[i].increment = this.increment;
     }
   }
-  //Load emails from the json file
-  loadFromJson(): EmailModule[] {
-    if (this.emails.length > 0) {
-      return this.emails;
-    }
-    this.http.get<EmailModule[]>(this.emailsPath).subscribe((data) => {
-      this.emails = data;
-      return this.emails;
-    });
-    return this.emails;
-  }
+  //#endregion
+
   //Get the  Data from Json files
-  getJsonData(): EmailModule[] {
+  getAllEmails(): void {
+    this.emails = this.allEmails;
+  }
+  //Clear the current emails
+  clearCurrentEmails(): void {
+    this.emails = [];
+  }
+
+  //Get the  Data from Json files
+  getAllDataFromJson(): EmailModule[] {
     //Check it the files were already loaded if so return them
-    if (this.emails != null && this.emails.length > 0) {
-      return this.emails;
+    if (this.allEmails != null && this.allEmails.length > 0) {
+      return this.allEmails;
     }
     // Get the file
     this.http.get<EmailModule[]>(this.emailsPath).subscribe((data) => {
       for (let i = 0; i < data.length; i++) {
-        this.emails.push(data[i]);
+        for (let i = 0; i < data.length; i++) {
+          data[i].theDate = new Date(data[i].date);
+        }
+        this.allEmails.push(data[i]);
       }
     });
-    return this.emails;
+    return this.allEmails;
   }
-
-  //#region fixed data
-  //Create data for testing
-  createTestingEmails(): void {
-    this.emails.length = 0;
-    let mail0 = new Date();
-    mail0.setHours(0, 20);
-    let mail1 = new Date();
-    mail1.setHours(0, 10);
-    let mail2 = new Date();
-    mail2.setHours(0, 0);
-    let jan01 = new Date();
-    jan01.setMonth(0, 1);
-    jan01.setDate(1);
-    let lastYear = new Date();
-
-    lastYear.setFullYear(2019, 11, 31);
-
-    let files = [{ fileName: 'FileName', link: 'TheLink.com' }];
-    this.addEmail(
-      'aaa',
-      ['zzz.zzz'],
-      '[HR-888] Notice of official announcement',
-      mail0
-    );
-    this.addEmail('bbb.bbb', ['yyy'], '[web:333]"Web Contact"', mail1);
-    this.addEmail(
-      'ccc',
-      ['xxx', 'someOther'],
-      'Happy New Year! Greetings for the New Yeear.',
-      mail2,
-      files
-    );
-    this.addEmail(
-      'ddd.dddd',
-      ['vvv.vvv', 'someOther'],
-      '[HR-887(Reviced: Office Expansion Project Team)] Notice of officers',
-      jan01
-    );
-    this.addEmail(
-      'eee',
-      ['sss', 'someOther', 'oneMore'],
-      '[Github] Logout Page',
-      jan01
-    );
-    this.addEmail(
-      'fff.fff',
-      ['qqq.qqq'],
-      '[dev] Postfix 3.1.12 / 3.2.9 / 3.3.4 / 3.4.5',
-      jan01
-    );
-    this.addEmail(
-      'ggg',
-      ['ppp'],
-      'Re:[Github] Brush-up on loading animation',
-      jan01
-    );
-    this.addEmail(
-      'hhh.hhh',
-      ['ooo.ooo'],
-      'Workplace Summery for for sample, Inc.: Jan2-Jan 9:',
-      jan01,
-      files
-    );
-    this.addEmail('iii', ['nnn'], 'I love you', lastYear, files);
-    this.addEmail(
-      'Pablo-Diego-José-Francisco',
-      ['Pablo-Diego-José-Francisco'],
-      '[info:888] ABC EQUIPMENT COMPANY',
-      lastYear
-    );
-  }
-  //Creates the emailmodule and sets the variables
-  addEmail(
-    from: string,
-    to: string[],
-    subject: string,
-    date: Date,
-    files?: FileObjectModule[]
-  ): void {
-    let email = new EmailModule();
-    email.senderEmail = from;
-    email.destination = to;
-    email.subject = subject;
-    email.date = date.toJSON();
-    email.files = files;
-    this.emails.push(email);
-  }
-  //#endregion
-  //Download current mails as json
-  downloadAsJson(): void {
-    let currentMails = this.emails;
-    let ending = '@example.com';
-    for (let i = 0; i < currentMails.length; i++) {
-      if (i == currentMails.length - 1) {
-        break;
-      }
-      currentMails[i].senderEmail += ending;
-      for (let y = 0; y < currentMails[i].destination.length; y++) {
-        currentMails[i].destination[y] += ending;
-      }
-    }
-    this.downloadTool.DownloadTextToFileAsJson(currentMails, 'emailsData');
+  //Set the current mails to be the ones that are in the range
+  searchInRange(start: Date, end: Date) {
+    this.emails = this.allEmails.filter((e) => {
+      return e.theDate > start && e.theDate < end;
+    });
   }
 }

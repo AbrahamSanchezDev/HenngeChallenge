@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCalendar } from '@angular/material/datepicker';
 import { DateObj } from './date-obj';
+import { EmailsService } from 'src/app/service/emails/emails.service';
 
 @Component({
   selector: 'app-search-calendar',
@@ -14,7 +15,7 @@ export class SearchCalendarComponent implements OnInit {
   endRange: string = 'end-range';
   selectionRange: string = 'selected-range';
 
-  constructor() {
+  constructor(private emailsService: EmailsService) {
     let today = new Date();
     this.addDate(today);
     this.addDate(today);
@@ -28,7 +29,10 @@ export class SearchCalendarComponent implements OnInit {
   }
   //Start the search
   startSearch(): void {
-    console.log('Search ranges');
+    this.emailsService.searchInRange(
+      this.searchRange[0].date,
+      this.searchRange[1].date
+    );
   }
   //Check if the date is currently selected
   isSelected = (event: Date): string => {

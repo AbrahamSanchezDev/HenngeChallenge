@@ -22,4 +22,5 @@ export class EmailModule {
   date: string;
   content: string;
   files?: FileObjectModule[];
+  theDate?: Date;
 }

@@ -17,9 +17,10 @@
   width: 100px;
   height: 100px;
 }
-
 .logo {
-  margin-top: 25%;
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
 }
 .logoImg {
   width: 100px;

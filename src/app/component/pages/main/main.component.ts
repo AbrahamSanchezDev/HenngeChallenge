@@ -8,20 +8,16 @@ import { EmailModule } from 'src/app/model/email/email.module';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
-  emails: EmailModule[];
-
   constructor(private emailsService: EmailsService) {}
 
-  ngOnInit(): void {
-    this.loadAllEmails();
-  }
+  ngOnInit(): void {}
 
-  //Load all emails from the service
-  loadAllEmails(): void {
-    this.emails = this.emailsService.getJsonData();
+  //returns the emains in the service
+  getEmails(): EmailModule[] {
+    return this.emailsService.emails;
   }
   //Returns true if there are email
   hasMails(): boolean {
-    return this.emails.length > 0;
+    return this.emailsService.emails.length > 0;
   }
 }

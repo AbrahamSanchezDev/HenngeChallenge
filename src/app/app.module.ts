@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { SortEmailComponent } from './component/email/sort-email/sort-email.component';
 import { SortEmailOptionComponent } from './component/email/sort-email-option/sort-email-option.component';
+import { EmailOptionsComponent } from './component/email/email-options/email-options.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SortEmailOptionComponent } from './component/email/sort-email-option/so
     SearchCalendarComponent,
     SortEmailComponent,
     SortEmailOptionComponent,
+    EmailOptionsComponent,
   ],
   imports: [
     BrowserModule,
