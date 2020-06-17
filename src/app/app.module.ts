@@ -23,6 +23,8 @@ import {
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
+import { SortEmailComponent } from './component/email/sort-email/sort-email.component';
+import { SortEmailOptionComponent } from './component/email/sort-email-option/sort-email-option.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { MatMenuModule } from '@angular/material/menu';
     DestinationDisplayayComponent,
     SearchEmailComponent,
     SearchCalendarComponent,
+    SortEmailComponent,
+    SortEmailOptionComponent,
   ],
   imports: [
     BrowserModule,

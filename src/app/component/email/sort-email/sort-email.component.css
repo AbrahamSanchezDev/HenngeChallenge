@@ -1,0 +1,71 @@
+.sort-parent p {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.sort-parent {
+  background-color: rgb(255, 250, 248);
+  height: 50px;
+  border-bottom: 1px solid rgb(224, 219, 211);
+}
+.sort-parent button {
+  text-align: left;
+  font-weight: 600;
+  color: var(--sortText);
+  height: 100%;
+}
+.sort-from {
+  width: 15%;
+}
+.sort-to {
+  width: 20%;
+}
+.sort-subject {
+  width: 53%;
+}
+.sort-date {
+  width: 11%;
+}
+.sort-options {
+  display: flex;
+}
+.space {
+  display: none;
+}
+@media screen and (max-width: 640px) {
+  .space {
+    display: block;
+    border-left: 1px solid var(--edges);
+    height: 15px;
+    align-self: center;
+    margin-left: 2px;
+  }
+  .sort-from {
+    width: min-content;
+  }
+  .sort-to {
+    width: min-content;
+  }
+  .sort-subject {
+    width: min-content;
+  }
+  .sort-date {
+    width: min-content;
+  }
+}
+@media screen and (max-width: 500px) {
+  .sort-options {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 400px) {
+  .sort-options {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .sort-options {
+    font-size: 0.7em;
+  }
+}

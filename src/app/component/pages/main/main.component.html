@@ -1,13 +1,10 @@
 <div class="main-parent">
-  <div>
-    <img src="assets/img/logo.png" alt="logo" />
-    <img src="assets/sgv/icon_arrow01.svg" alt="img" class="img" />
-    <img src="assets/sgv/icon_calender.svg" alt="img" class="img" />
-    <img src="assets/sgv/icon_search.svg" alt="img" class="img" />
+  <div class="search-email">
+    <app-search-email></app-search-email>
   </div>
-  <app-search-email></app-search-email>
   <div class="results">
     <div *ngIf="hasMails()">
+      <app-sort-email></app-sort-email>
       <div *ngFor="let email of emails">
         <app-email-display [email]="email"></app-email-display>
       </div>

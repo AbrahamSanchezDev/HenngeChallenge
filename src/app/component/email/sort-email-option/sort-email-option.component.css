@@ -1,0 +1,22 @@
+.sort-option {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-left: 10px;
+}
+.sort-text {
+}
+.sort-img {
+  margin-left: 5px;
+  width: 10px;
+  /* background-color: aqua; */
+  align-items: center;
+  display: flex;
+}
+.sort-img img {
+  width: 10px;
+  align-self: center;
+}
+.inverse {
+  transform: rotate(180deg);
+}
