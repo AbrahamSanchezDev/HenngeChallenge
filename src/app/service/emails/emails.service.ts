@@ -139,8 +139,6 @@ export class EmailsService {
         }
         this.allEmails.push(data[i]);
       }
-      this.getAllEmails();
-      this.openEmail(this.allEmails[0]);
     });
     return this.allEmails;
   }
