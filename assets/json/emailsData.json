@@ -1,0 +1,114 @@
+[
+  {
+    "senderEmail": "aaa@example.com",
+    "destination": [
+      "zzz.zzz@example.com"
+    ],
+    "subject": "[HR-888] Notice of official announcement",
+    "date": "2020-06-17T05:20:16.348Z",
+    "content": "Some content for the [HR-888] Notice of official announcement from: aaa  to : zzz.zzz"
+  },
+  {
+    "senderEmail": "bbb.bbb@example.com",
+    "destination": [
+      "yyy@example.com"
+    ],
+    "subject": "[web:333]\"Web Contact\"",
+    "date": "2020-06-17T05:10:16.348Z",
+    "content": "Some content for the [web:333]\"Web Contact\" from: bbb.bbb  to : yyy"
+  },
+  {
+    "senderEmail": "ccc@example.com",
+    "destination": [
+      "xxx@example.com",
+      "someOther@example.com"
+    ],
+    "subject": "Happy New Year! Greetings for the New Yeear.",
+    "date": "2020-06-17T05:00:16.348Z",
+    "files": [
+      {
+        "fileName": "FileName",
+        "link": "TheLink.com"
+      }
+    ],
+    "content": "Some content for the Happy New Year! Greetings for the New Yeear. from: ccc  to : xxx,someOther"
+  },
+  {
+    "senderEmail": "ddd.dddd@example.com",
+    "destination": [
+      "vvv.vvv@example.com",
+      "someOther@example.com"
+    ],
+    "subject": "[HR-887(Reviced: Office Expansion Project Team)] Notice of officers",
+    "date": "2020-01-01T23:55:16.348Z",
+    "content": "Some content for the [HR-887(Reviced: Office Expansion Project Team)] Notice of officers from: ddd.dddd  to : vvv.vvv,someOther"
+  },
+  {
+    "senderEmail": "eee@example.com",
+    "destination": [
+      "sss@example.com",
+      "someOther@example.com",
+      "oneMore@example.com"
+    ],
+    "subject": "[Github] Logout Page",
+    "date": "2020-01-01T23:55:16.348Z",
+    "content": "Some content for the [Github] Logout Page from: eee  to : sss,someOther,oneMore"
+  },
+  {
+    "senderEmail": "fff.fff@example.com",
+    "destination": [
+      "qqq.qqq@example.com"
+    ],
+    "subject": "[dev] Postfix 3.1.12 / 3.2.9 / 3.3.4 / 3.4.5",
+    "date": "2020-01-01T23:55:16.348Z",
+    "content": "Some content for the [dev] Postfix 3.1.12 / 3.2.9 / 3.3.4 / 3.4.5 from: fff.fff  to : qqq.qqq"
+  },
+  {
+    "senderEmail": "ggg@example.com",
+    "destination": [
+      "ppp@example.com"
+    ],
+    "subject": "Re:[Github] Brush-up on loading animation",
+    "date": "2020-01-01T23:55:16.348Z",
+    "content": "Some content for the Re:[Github] Brush-up on loading animation from: ggg  to : ppp"
+  },
+  {
+    "senderEmail": "hhh.hhh@example.com",
+    "destination": [
+      "ooo.ooo@example.com"
+    ],
+    "subject": "Workplace Summery for for sample, Inc.: Jan2-Jan 9:",
+    "date": "2020-01-01T23:55:16.348Z",
+    "files": [
+      {
+        "fileName": "FileName",
+        "link": "TheLink.com"
+      }
+    ],
+    "content": "Some content for the Workplace Summery for for sample, Inc.: Jan2-Jan 9: from: hhh.hhh  to : ooo.ooo"
+  },
+  {
+    "senderEmail": "iii@example.com",
+    "destination": [
+      "nnn@example.com"
+    ],
+    "subject": "I love you",
+    "date": "2019-12-31T23:55:16.348Z",
+    "files": [
+      {
+        "fileName": "FileName",
+        "link": "TheLink.com"
+      }
+    ],
+    "content": "Some content for the I love you from: iii  to : nnn"
+  },
+  {
+    "senderEmail": "Pablo-Diego-José-Francisco@example.com",
+    "destination": [
+      "Pablo-Diego-José-Francisco"
+    ],
+    "subject": "[info:888] ABC EQUIPMENT COMPANY",
+    "date": "2019-12-31T23:55:16.348Z",
+    "content": "Some content for the [info:888] ABC EQUIPMENT COMPANY from: Pablo-Diego-José-Francisco  to : Pablo-Diego-José-Francisco"
+  }
+]
