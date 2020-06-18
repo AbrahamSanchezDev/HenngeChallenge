@@ -22,6 +22,12 @@
         "singleInstance": true,
         "color": "#fff",
         "command": "ng deploy --repo https://github.com/holykiller/HenngeChallenge.git --base-href https://holykiller.github.io/HenngeChallenge/"
+      },
+      {
+        "name": "Buid Div",
+        "singleInstance": true,
+        "color": "#fff",
+        "command": "ng build --prod --base-href https://holykiller.github.io/HenngeChallenge/"
       }
     ]
   }
