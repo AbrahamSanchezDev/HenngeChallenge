@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmailDisplayComponent } from './email-display.component';
 import { testingEmail } from 'src/app/model/email/email.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('EmailDisplayComponent', () => {
   let component: EmailDisplayComponent;
@@ -10,6 +11,7 @@ describe('EmailDisplayComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EmailDisplayComponent],
+      imports: [HttpClientModule],
     }).compileComponents();
   }));
 

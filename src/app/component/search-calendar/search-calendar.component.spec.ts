@@ -2,7 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchCalendarComponent } from './search-calendar.component';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 describe('SearchCalendarComponent', () => {
   let component: SearchCalendarComponent;
   let fixture: ComponentFixture<SearchCalendarComponent>;
@@ -17,7 +18,7 @@ describe('SearchCalendarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SearchCalendarComponent],
-      imports: [MatMenuModule],
+      imports: [MatMenuModule, HttpClientModule, MatSnackBarModule],
     }).compileComponents();
   }));
 

@@ -37,6 +37,7 @@ export class EmailDisplayComponent implements OnInit {
     this.date = new Date(this.email.date);
     this.today = new Date();
   }
+
   //Returns the  email's sender
   getSender(): string {
     return this.email.senderEmail;
