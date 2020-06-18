@@ -1,0 +1,43 @@
+.current-email-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  justify-items: left;
+  padding: 20px;
+  margin: 10px;
+}
+.obj1 {
+  width: 100%;
+}
+.obj2 {
+  width: 50%;
+}
+.obj3 {
+  width: 33%;
+}
+.obj4 {
+  width: 25%;
+}
+@media screen and (max-width: 1000px) {
+  .obj2 {
+    width: 50%;
+  }
+  .obj3 {
+    width: 50%;
+  }
+  .obj4 {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .obj2 {
+    width: 100%;
+  }
+  .obj3 {
+    width: 100%;
+  }
+  .obj4 {
+    width: 100%;
+  }
+}

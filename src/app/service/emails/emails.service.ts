@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { EmailModule } from 'src/app/model/email/email.module';
 import { HttpClient } from '@angular/common/http';
 import { SortingOption } from 'src/app/model/sorting/sorting-option';
@@ -13,6 +13,9 @@ export class EmailsService {
   options: SortingOption;
   increment: boolean;
   optionIndex: number;
+  showingEmail: boolean;
+  displayedEmails: EmailModule[] = [];
+  eventonDisplayEmail: EventEmitter<number> = new EventEmitter();
 
   constructor(private http: HttpClient) {
     this.options = new SortingOption();
@@ -113,6 +116,13 @@ export class EmailsService {
   //Clear the current emails
   clearCurrentEmails(): void {
     this.emails = [];
+    this.clearDisplayEmails();
+  }
+  //Clears the displayed emails
+  clearDisplayEmails(): void {
+    this.showingEmail = false;
+    this.displayedEmails = [];
+    this.callOnAddedEvent();
   }
 
   //Get the  Data from Json files
@@ -129,6 +139,8 @@ export class EmailsService {
         }
         this.allEmails.push(data[i]);
       }
+      this.getAllEmails();
+      this.openEmail(this.allEmails[0]);
     });
     return this.allEmails;
   }
@@ -137,5 +149,21 @@ export class EmailsService {
     this.emails = this.allEmails.filter((e) => {
       return e.theDate > start && e.theDate < end;
     });
+  }
+  //Calls the event and adds the email if it doesn't have it
+  openEmail(email: EmailModule) {
+    if (!this.displayedEmails.includes(email)) {
+      this.displayedEmails.push(email);
+      this.callOnAddedEvent();
+    }
+    this.showingEmail = true;
+  }
+  //Sets the showing email to false so you can vide another email
+  openAnotherEmail(): void {
+    this.showingEmail = false;
+  }
+  //Call the on item added
+  callOnAddedEvent(): void {
+    this.eventonDisplayEmail.emit(this.displayedEmails.length);
   }
 }

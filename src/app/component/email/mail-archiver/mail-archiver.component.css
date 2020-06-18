@@ -1,0 +1,52 @@
+.mail-archiver-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  margin: 0 30px;
+  margin-top: 5vh;
+}
+.search-email {
+  width: 30%;
+}
+.results {
+  border-top: 1px solid var(--edges);
+  height: 100%;
+}
+.img {
+  width: 100px;
+  height: 100px;
+}
+
+.logo {
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+}
+.logoImg {
+  width: 100px;
+  height: 100px;
+}
+@media screen and (max-width: 1200px) {
+  .search-email {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .main-parent {
+    margin-top: 10vh;
+  }
+  .search-email {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .search-email {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .search-email {
+    width: 100%;
+  }
+}

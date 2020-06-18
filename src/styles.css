@@ -1,6 +1,8 @@
 :root {
   --edges: rgb(163, 163, 163);
   --sortText: rgb(77, 77, 77);
+  --bg1: rgb(255, 250, 248);
+  --bg2: rgb(245, 202, 185);
 }
 html,
 body {
@@ -27,4 +29,8 @@ body {
 .end-range {
   background-color: rgb(139, 139, 139) !important;
   border-radius: 0 25% 25% 0;
+}
+.mat-snack-bar-container {
+  background-color: rgb(102, 102, 102);
+  color: #fff;
 }

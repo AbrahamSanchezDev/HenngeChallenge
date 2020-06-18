@@ -1,0 +1,5 @@
+<div class="current-email-parent">
+  <div *ngFor="let email of getCurrentEmails()" class="{{ getChildClass() }}">
+    <app-email-content-display [email]="email"></app-email-content-display>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="email-content-parent">
+  <button class="close-button" (click)="closeEmails()">x</button>
+  <img src="assets/img/logo.png" alt="file" class="log-img" />
+  <div class="open-button">
+    <button (click)="openAnotherEmail()">+</button>
+    <p class="conteind-text">Open another Email</p>
+  </div>
+  <app-two-text-display
+    first="From: "
+    [second]="getSender()"
+  ></app-two-text-display>
+  <app-two-text-display
+    first="To: "
+    [second]="getDestinations()"
+  ></app-two-text-display>
+  <app-two-text-display
+    first="Subject: "
+    [second]="getSubject()"
+    class="email-subject"
+  ></app-two-text-display>
+  <div class="file-content">
+    <img src="assets/sgv/icon_clip.svg" alt="file" *ngIf="hasFiles()" />
+  </div>
+  <p [innerHTML]="getContent()" class="email-content"></p>
+</div>

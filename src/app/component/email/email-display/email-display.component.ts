@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EmailModule } from 'src/app/model/email/email.module';
+import { EmailsService } from 'src/app/service/emails/emails.service';
 
 @Component({
   selector: 'app-email-display',
@@ -24,7 +25,7 @@ export class EmailDisplayComponent implements OnInit {
     'Nov',
     'Dec',
   ];
-  constructor() {}
+  constructor(private emailService: EmailsService) {}
 
   ngOnInit(): void {
     if (this.email == null) {
@@ -43,5 +44,8 @@ export class EmailDisplayComponent implements OnInit {
   //Gets the email's subject
   getSubject(): string {
     return this.email.subject;
+  }
+  onClick(): void {
+    this.emailService.openEmail(this.email);
   }
 }

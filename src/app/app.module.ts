@@ -20,7 +20,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SortEmailComponent } from './component/email/sort-email/sort-email.component';
 import { SortEmailOptionComponent } from './component/email/sort-email-option/sort-email-option.component';
 import { EmailOptionsComponent } from './component/email/email-options/email-options.component';
-
+import {
+  MatSidenavModule,
+  MatSidenavContainer,
+} from '@angular/material/sidenav';
+import { CurrentEmailDisplayComponent } from './component/display/current-email-display/current-email-display.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MailArchiverComponent } from './component/email/mail-archiver/mail-archiver.component';
+import { EmailContentDisplayComponent } from './component/display/email-content-display/email-content-display.component';
+import { TwoTextDisplayComponent } from './component/display/two-text-display/two-text-display.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +42,10 @@ import { EmailOptionsComponent } from './component/email/email-options/email-opt
     SortEmailComponent,
     SortEmailOptionComponent,
     EmailOptionsComponent,
+    CurrentEmailDisplayComponent,
+    MailArchiverComponent,
+    EmailContentDisplayComponent,
+    TwoTextDisplayComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +58,8 @@ import { EmailOptionsComponent } from './component/email/email-options/email-opt
     MatInputModule,
     MatInputModule,
     MatMenuModule,
+    MatSidenavModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

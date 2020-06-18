@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatCalendar } from '@angular/material/datepicker';
 import { DateObj } from './date-obj';
 import { EmailsService } from 'src/app/service/emails/emails.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-search-calendar',
   templateUrl: './search-calendar.component.html',
@@ -15,7 +15,10 @@ export class SearchCalendarComponent implements OnInit {
   endRange: string = 'end-range';
   selectionRange: string = 'selected-range';
 
-  constructor(private emailsService: EmailsService) {
+  constructor(
+    private emailsService: EmailsService,
+    private snackBar: MatSnackBar
+  ) {
     let today = new Date();
     this.addDate(today);
     this.addDate(today);
@@ -33,6 +36,15 @@ export class SearchCalendarComponent implements OnInit {
       this.searchRange[0].date,
       this.searchRange[1].date
     );
+    if (this.emailsService.emails.length == 0) {
+      this.snackBar.open(
+        '0 Results were given from the current date range',
+        null,
+        {
+          duration: 2000,
+        }
+      );
+    }
   }
   //Check if the date is currently selected
   isSelected = (event: Date): string => {
