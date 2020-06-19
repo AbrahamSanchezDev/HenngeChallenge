@@ -26,6 +26,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MailArchiverComponent } from './component/email/mail-archiver/mail-archiver.component';
 import { EmailContentDisplayComponent } from './component/display/email-content-display/email-content-display.component';
 import { TwoTextDisplayComponent } from './component/display/two-text-display/two-text-display.component';
+import { PostChallegeComponent } from './other/post-challege/post-challege.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { TwoTextDisplayComponent } from './component/display/two-text-display/tw
     MailArchiverComponent,
     EmailContentDisplayComponent,
     TwoTextDisplayComponent,
+    PostChallegeComponent,
   ],
   imports: [
     BrowserModule,
