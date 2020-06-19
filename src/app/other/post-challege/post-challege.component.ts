@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import * as otp from 'otplib/';
+// import { authenticator, totp, hotp } from '@otplib/preset-v11';
+// import { HashAlgorithms } from 'node_modules/@otplib/core';
+
 @Component({
   selector: 'app-post-challege',
   templateUrl: './post-challege.component.html',
@@ -56,13 +58,15 @@ export class PostChallegeComponent implements OnInit {
     const URL = 'https://api.challenge.hennge.com/challenges/003';
     const sharedSecret = reqJSON.contact_email + 'HENNGECHALLENGE003';
 
-    let optionsObj = { digits: 10, algorithm: 'sha512', step: 0 };
-    // authenticator.options = { digits: 10, algorithm: 'sha512', step: 0 };
-
-    // console.log(otp.totp.allOptions());
-
-    // const myTotp = totp.generate(sharedSecret);
-    // const isValid = totp.check(myTotp, sharedSecret);
+    // totp.options = {
+    //   digits: 10,
+    //   algorithm: HashAlgorithms.SHA512,
+    //   step: 0,
+    // };
+    // let myTotp = totp.generate(sharedSecret);
+    // console.log('My Token is : ' + myTotp);
+    // let isValid = totp.check(myTotp, sharedSecret);
+    // console.log('My Token is : ' + myTotp + ' ' + isValid);
 
     // console.log('Token Info:', { myTotp, isValid });
 
