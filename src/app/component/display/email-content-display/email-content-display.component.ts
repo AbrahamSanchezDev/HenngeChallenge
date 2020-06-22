@@ -43,6 +43,5 @@ export class EmailContentDisplayComponent implements OnInit {
   //Disable Display emails so you can open another one
   openAnotherEmail(): void {
     this.emailService.openAnotherEmail();
-    console.log('Calling');
   }
 }
