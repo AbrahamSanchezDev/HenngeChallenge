@@ -1,13 +1,13 @@
 <div class="main-display" (click)="onClick()">
   <!-- Sender -->
-  <p class="sender text-display conteind-text">{{ getSender() }}</p>
+  <p class="sender text-display contend-text">{{ getSender() }}</p>
   <!-- Destinations -->
   <app-destination-display
     [email]="email"
     class="destination-obj text-display"
   ></app-destination-display>
   <!-- Subject -->
-  <p class="subject text-display conteind-text">{{ getSubject() }}</p>
+  <p class="subject text-display contend-text">{{ getSubject() }}</p>
   <!-- Date and files -->
   <app-email-meta-data-display
     [email]="email"

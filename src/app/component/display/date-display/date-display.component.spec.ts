@@ -32,7 +32,7 @@ describe('DateDisplayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  //Test if retuns the correct format for the date
+  //Test if returns the correct format for the date
   it('should return the correct format', () => {
     expect(component.getDate()).toContain(today.getHours().toString());
     component.dateText = sameYearText;
@@ -42,12 +42,12 @@ describe('DateDisplayComponent', () => {
     component.createDate();
     expect(component.getDate()).toContain('2019');
   });
-  //Test that if you give it a number less that 10 it will formated to have 0 before it
+  //Test that if you give it a number less that 10 it will formatted to have 0 before it
   it('should format the given number to have 2 digits', () => {
     expect(component.twoDigitsFormat(3)).toBe('03');
   });
 
-  //Test that if you give it a month less that 10 it will formated to have 0 before it
+  //Test that if you give it a month less that 10 it will formatted to have 0 before it
   it('should format the given number to have 2 digits', () => {
     setToSameYear();
     expect(component.month()).toBe('01');

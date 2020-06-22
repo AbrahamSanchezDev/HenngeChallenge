@@ -23,12 +23,12 @@ describe('EmailMetaDataDisplayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  //Test that it retuns the date of the email
+  //Test that it returns the date of the email
   it('should return the date in the email', () => {
     expect(component.getEmailDate()).toContain('2020');
   });
-  //Test if it retuns if the email has some file in it
-  it('should retuns true because the testing email has one file', () => {
+  //Test if it returns if the email has some file in it
+  it('should returns true because the testing email has one file', () => {
     expect(component.hasFiles()).toBeTrue();
   });
 });

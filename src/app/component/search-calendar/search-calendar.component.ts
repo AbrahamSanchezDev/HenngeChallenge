@@ -27,7 +27,7 @@ export class SearchCalendarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  //Retuns the current ranges
+  //Returns the current ranges
   getSearchRange(): string {
     return `${this.searchRange[0].text} - ${this.searchRange[1].text}`;
   }
@@ -102,7 +102,7 @@ export class SearchCalendarComponent implements OnInit {
     this.searchRange[index].move = true;
     return true;
   }
-  //Retuns true if one of the selected days is moving
+  //Returns true if one of the selected days is moving
   moving(): number {
     for (let i = 0; i < this.searchRange.length; i++) {
       if (this.searchRange[i].move) {

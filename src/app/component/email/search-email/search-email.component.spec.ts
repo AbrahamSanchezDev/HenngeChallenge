@@ -23,8 +23,8 @@ describe('SearchEmailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  //Test that retuns the current amount of results
-  it('should return 0 in the text of how many resuts there are', () => {
-    expect(component.getCurrentResoults()).toBe('Results: 0 mail(s)');
+  //Test that returns the current amount of results
+  it('should return 0 in the text of how many results there are', () => {
+    expect(component.getCurrentResults()).toBe('Results: 0 mail(s)');
   });
 });

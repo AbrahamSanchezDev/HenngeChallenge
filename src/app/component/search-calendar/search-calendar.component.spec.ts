@@ -33,12 +33,12 @@ describe('SearchCalendarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  //Test getSearchRange that retuns the text that has today in the text
+  //Test getSearchRange that returns the text that has today in the text
   it('should return the that today is in the search range', () => {
     expect(component.getSearchRange()).toContain(today.getDate().toString());
   });
   //Test isSelected that returns the correct class name for the given date
-  it('should retuns the class name for the given date', () => {
+  it('should returns the class name for the given date', () => {
     setMonths(5, 5, 5);
     today.setMonth(5, 1);
     expect(component.isSelected(today)).toContain('start');
@@ -69,13 +69,13 @@ describe('SearchCalendarComponent', () => {
     setMonths(5, 4, 7);
     expect(component.searchRange[0].month).toBe(4);
   });
-  //Test that startMoving retuns when the first position is the same as today
+  //Test that startMoving returns when the first position is the same as today
   it('should return true when today it is the same as the first position', () => {
     setMonths(4, 4, 5);
     expect(component.startMoving(today)).toBeTrue();
     expect(component.searchRange[0].move).toBeTrue();
   });
-  //Test that startMoving retuns when the first position is the same as today
+  //Test that startMoving returns when the first position is the same as today
   it('should return 0 or 1 if the dateObj is moving', () => {
     component.searchRange[0].move = true;
     expect(component.moving()).toBe(0);
@@ -93,7 +93,7 @@ describe('SearchCalendarComponent', () => {
     expect(component.checkIfInRange(today)).toBeFalse();
   });
   //Test if today is the same as the starting or ending dates
-  it('should return if today is one of the seaching Ranges', () => {
+  it('should return if today is one of the searching Ranges', () => {
     setMonths(4, 4, 7);
     expect(component.checkIfSelected(today)).toBeTrue();
     setMonths(3, 4, 7);

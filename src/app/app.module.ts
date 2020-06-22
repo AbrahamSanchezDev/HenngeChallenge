@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmailDisplayComponent } from './component/email/email-display/email-display.component';
 import { DateDisplayComponent } from './component/display/date-display/date-display.component';
 import { EmailMetaDataDisplayComponent } from './component/display/email-meta-data-display/email-meta-data-display.component';
-import { DestinationDisplayayComponent } from './component/display/destination-displayay/destination-display.component';
+import { DestinationDisplayComponent } from './component/display/destination-displayay/destination-display.component';
 import { SearchEmailComponent } from './component/email/search-email/search-email.component';
 import { SearchCalendarComponent } from './component/search-calendar/search-calendar.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -34,7 +34,7 @@ import { TwoTextDisplayComponent } from './component/display/two-text-display/tw
     EmailDisplayComponent,
     DateDisplayComponent,
     EmailMetaDataDisplayComponent,
-    DestinationDisplayayComponent,
+    DestinationDisplayComponent,
     SearchEmailComponent,
     SearchCalendarComponent,
     SortEmailComponent,

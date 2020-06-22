@@ -36,7 +36,7 @@ describe('SortEmailOptionComponent', () => {
 
   //Test if the direction for the arro is oriented the correct way
   it('should return the sorting arrow direction', () => {
-    expect(component.getSortDirection()).toBe(component.hiden);
+    expect(component.getSortDirection()).toBe(component.hidden);
     option.active = true;
     expect(component.getSortDirection()).toBe(component.inverse);
     option.increment = true;

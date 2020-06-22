@@ -9,7 +9,7 @@ import { SortingData } from 'src/app/model/sorting/sorting-data';
 export class SortEmailOptionComponent implements OnInit {
   @Input() option: SortingData;
   arrow: string = 'assets/sgv/icon_arrow01.svg';
-  hiden: string = 'hiden';
+  hidden: string = 'hided';
   inverse: string = 'inverse';
 
   constructor() {}
@@ -18,13 +18,13 @@ export class SortEmailOptionComponent implements OnInit {
       console.log("Please pass the 'option' variable to the component");
     }
   }
-  //Retuns the sorting direction
+  //Returns the sorting direction
   getSortDirection(): string {
     if (this.option == null) {
       return '';
     }
     if (!this.option.active) {
-      return this.hiden;
+      return this.hidden;
     }
     //Check if its
     if (!this.option.increment) {
@@ -32,7 +32,7 @@ export class SortEmailOptionComponent implements OnInit {
     }
     return '';
   }
-  //Retuns the option text
+  //Returns the option text
   getText(): string {
     if (this.option == null) {
       return '';

@@ -6,18 +6,18 @@ import { EmailModule } from 'src/app/model/email/email.module';
   templateUrl: './destination-display.component.html',
   styleUrls: ['./destination-display.component.css'],
 })
-export class DestinationDisplayayComponent implements OnInit {
+export class DestinationDisplayComponent implements OnInit {
   @Input() email: EmailModule;
   constructor() {}
 
   ngOnInit(): void {
     if (this.email == null) {
       console.error(
-        "Please pass 'email' to the component  DestinationDisplayayComponent"
+        "Please pass 'email' to the component  DestinationDisplayComponent"
       );
     }
   }
-  //retuns the destinations of the email
+  //returns the destinations of the email
   getDestination(): string {
     if (this.email.destination.length == 1) {
       return this.email.destination[0];
@@ -29,7 +29,7 @@ export class DestinationDisplayayComponent implements OnInit {
     return this.email.destination.length > 1;
   }
   //Returns the total amount of destinations minus the first one
-  getTotalDestionations(): string {
+  getTotalDestinations(): string {
     return `+${this.email.destination.length - 1}`;
   }
 }

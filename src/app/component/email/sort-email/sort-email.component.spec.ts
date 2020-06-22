@@ -23,7 +23,7 @@ describe('SortEmailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  //Test if retuns the asked option
+  //Test if returns the asked option
   it('should have options', () => {
     expect(component.getOption(0).text).toContain('From');
     expect(component.getOption(1).text).toContain('To');

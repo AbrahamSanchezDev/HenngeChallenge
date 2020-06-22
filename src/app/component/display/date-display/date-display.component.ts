@@ -36,18 +36,18 @@ export class DateDisplayComponent implements OnInit {
     this.date = new Date(this.dateText);
     this.today = new Date();
   }
-  //Returns the correcto format for the dae
+  //Returns the correct format for the dae
   getDate(): string {
     if (this.date == null) return '';
     //Same day just returns the time
     if (this.sameDay()) {
       return `${this.hour()}:${this.minutes()}`;
     }
-    //Same month retuns the month as text and the
+    //Same month returns the month as text and the
     if (this.sameYear()) {
       return `${this.monthAsText()} ${this.day()}`;
     }
-    //When it is not from the same year it retuns the year/month(number)/day
+    //When it is not from the same year it returns the year/month(number)/day
     return `${this.date.getFullYear()}/${this.month()}/${this.day()}`;
   }
   //#region Check on date vs today
@@ -63,8 +63,8 @@ export class DateDisplayComponent implements OnInit {
     return this.date.getFullYear() == this.today.getFullYear();
   }
   //#endregion
-  //#region formating
-  //Makes sure that any number(x) less than 10 is formated to 0x
+  //#region formatting
+  //Makes sure that any number(x) less than 10 is formatted to 0x
   twoDigitsFormat(number: number): string {
     if (number >= 10) {
       return number.toString();
@@ -72,23 +72,23 @@ export class DateDisplayComponent implements OnInit {
     return `0${number}`;
   }
   //#endregion
-  //#region Formated date
-  //Retuns the date's month
+  //#region Formate date
+  //Returns the date's month
   month(): string {
     return this.twoDigitsFormat(this.date.getMonth() + 1);
   }
-  //Retuns the date's month as text
+  //Returns the date's month as text
   monthAsText(): string {
     return this.months[this.date.getMonth()];
   }
-  //Retuns the date's day
+  //Returns the date's day
   day(): string {
     return this.twoDigitsFormat(this.date.getDate());
   }
   hour(): string {
     return this.date.getHours().toString();
   }
-  //Retuns the date's minutes
+  //Returns the date's minutes
   minutes(): string {
     return this.twoDigitsFormat(this.date.getMinutes());
   }

@@ -11,7 +11,7 @@ export class SortEmailComponent implements OnInit {
   constructor(private emailService: EmailsService) {}
 
   ngOnInit(): void {}
-  //Retuns the option at the given index
+  //Returns the option at the given index
   getOption(index: number): MenuData {
     return this.emailService.options.data[index];
   }

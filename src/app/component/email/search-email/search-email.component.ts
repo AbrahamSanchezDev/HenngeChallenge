@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailsService } from 'src/app/service/emails/emails.service';
-import { MatDatepicker } from '@angular/material/datepicker';
-
 @Component({
   selector: 'app-search-email',
   templateUrl: './search-email.component.html',
@@ -12,7 +10,7 @@ export class SearchEmailComponent implements OnInit {
 
   ngOnInit(): void {}
   //Returns the current results
-  getCurrentResoults(): string {
+  getCurrentResults(): string {
     return `Results: ${this.emailsService.emails.length} mail(s)`;
   }
 }

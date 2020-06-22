@@ -26,12 +26,12 @@ describe('EmailDisplayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  //Test that it retuns the sender
+  //Test that it returns the sender
   it('should return the sender of the email', () => {
     expect(component.getSender()).toContain('123');
   });
-  //Test that it retuns the subject text
-  it('should retunt the subject', () => {
+  //Test that it returns the subject text
+  it('should returns the subject', () => {
     expect(component.getSubject()).toContain('subject');
   });
 });
