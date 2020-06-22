@@ -65,17 +65,29 @@ export class SearchCalendarComponent implements OnInit {
     //Check if there is a date been moved
     let movingIndex = this.moving();
     if (movingIndex >= 0) {
-      //Move the one that was moving to the new position
-      this.removeDateAt(movingIndex);
-      this.addDate(event);
-      this.sortDates();
-      //Update ui
-      calendar.updateTodaysDate();
+      //Move the last selected date to the new date
+      this.moveDateTo(movingIndex, event, calendar);
       return;
     }
     if (this.startMoving(event)) {
       calendar.updateTodaysDate();
+      return;
     }
+    //Check if both start and end are in the same position thus start moving one of them
+    if (this.samePositions()) {
+      //Move the first date to the new date
+      this.moveDateTo(0, event, calendar);
+      return true;
+    }
+  }
+  //Move the search ranges
+  moveDateTo(index: number, event: Date, calendar: MatCalendar<Date>) {
+    //Move the one that was moving to the new position
+    this.removeDateAt(index);
+    this.addDate(event);
+    this.sortDates();
+    //Update ui
+    calendar.updateTodaysDate();
   }
   //Add date to the selected days
   addDate(date: Date) {
@@ -130,5 +142,9 @@ export class SearchCalendarComponent implements OnInit {
       }
     }
     return -1;
+  }
+  //Returns true if both start and end positions are in the same date
+  samePositions(): boolean {
+    return this.searchRange[0].text == this.searchRange[1].text;
   }
 }
